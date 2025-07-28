@@ -26,9 +26,6 @@ SECRET_KEY = 'django-insecure-y+gt33as7a!q(h8+j&14##g&@fsk(*!_n1^yxr*jk2%@%&0o6j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -129,7 +126,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-ALLOWED_HOSTS = ['yourusername.pythonanywhere.com']
+ALLOWED_HOSTS = [
+    'warehouse-inventory-cqw6.onrender.com',
+    'localhost',
+    '127.0.0.1',
+]
+
 
 if os.getenv('RENDER'):
     ALLOWED_HOSTS.append('your-app-name.onrender.com')
