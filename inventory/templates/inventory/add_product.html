@@ -1,0 +1,126 @@
+{% extends 'inventory/base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+  {% if is_edit %}Edit{% else %}Add{% endif %} Product
+{% endblock %}
+
+{% block content %}
+  <style>
+    body {
+      background-color: #fff3cd; /* light yellow */
+    }
+
+    .form-wrapper {
+      background-color: #ffe6e6; /* light pink */
+      padding: 2rem 3rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border: 1px solid #dee2e6;
+    }
+
+    .form-title {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      width: 120px;
+      font-weight: 600;
+      padding-top: 0.5rem;
+    }
+
+    .form-group .form-field {
+      flex: 1;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-field small {
+      color: #888;
+      margin-top: 0.25rem;
+      display: inline-block;
+    }
+
+    .text-danger small {
+      color: #dc3545;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+      gap: 1rem;
+    }
+
+    .btn-custom {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 8px 20px;
+      border: 1px solid #c3e6cb;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .btn-custom:hover {
+      background-color: #c3e6cb;
+      color: #0b2e13;
+      text-decoration: none;
+    }
+  </style>
+
+  <div class="form-wrapper">
+    <div class="form-title">
+      {% if is_edit %}Edit{% else %}Add{% endif %} Product
+    </div>
+
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      {% for field in form %}
+        <div class="form-group">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          <div class="form-field">
+            {{ field|add_class:"form-control" }}
+
+            {% if field.help_text %}
+              <small>{{ field.help_text }}</small>
+            {% endif %}
+
+            {% if field.errors %}
+              <div class="text-danger">
+                {% for error in field.errors %}
+                  <small>{{ error }}</small><br>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="form-actions">
+        <button type="submit" class="btn-custom">
+          {% if is_edit %}Update{% else %}Add{% endif %}
+        </button>
+        <a href="{% url 'product_list' %}" class="btn-custom">Cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

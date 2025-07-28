@@ -1,0 +1,61 @@
+{% extends 'inventory/base.html' %}
+{% block title %}Confirm Delete{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background-color: #fff3cd; /* light yellow */
+  }
+
+  .delete-wrapper {
+    background-color: #ffe6e6; /* light pink */
+    width: 50%;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #dee2e6;
+    text-align: center;
+  }
+
+  .delete-wrapper h2 {
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+
+  .delete-wrapper p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+
+  .btn-custom {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 8px 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+
+  .btn-custom:hover {
+    background-color: #c3e6cb;
+    color: #0b2e13;
+    text-decoration: none;
+  }
+</style>
+
+<div class="delete-wrapper">
+  <h2>Delete “{{ product.name }}”?</h2>
+  <p>Are you sure you want to permanently remove this product?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn-custom">Yes, Delete</button>
+    <a href="{% url 'product_list' %}" class="btn-custom">Cancel</a>
+  </form>
+</div>
+{% endblock %}

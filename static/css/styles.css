@@ -1,0 +1,180 @@
+/* Card hover effect */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 16px rgba(0,0,0,0.2);
+}
+
+/* Messages styling */
+.messages {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.messages li {
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  background: #e9f7ef;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  margin-bottom: 0.5rem;
+}
+
+/* Dashboard card */
+.dashboard-card {
+  background: #f8f9fa;
+  padding: 1.25rem; /* adjusted */
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 1.5rem;
+  
+}
+.inventory-info{
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+
+}
+
+/* Delete confirmation */
+.delete-confirm {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border: 1px solid #f5c6cb;
+  background: #f8d7da;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Improved product card layout */
+.card.h-100 {
+  padding: 1.25rem; /* matching dashboard */
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Make card titles stand out */
+.card-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Card body spacing */
+.card-body {
+  flex-grow: 1;
+  padding: 0.25rem 0 0.25rem 0; /* reduced vertical spacing */
+}
+.card-body p {
+  margin-bottom: 0.3rem; /* reduced paragraph spacing */
+}
+
+/* Card footer (e.g., action buttons) */
+.card-footer {
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+  margin-top: 0.5rem;
+}
+
+/* Heading font size consistency */
+h1, h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-list-container {
+  margin-bottom: 2rem; 
+  padding: 0.5rem 1rem;
+
+}
+
+/* Alternate background colors */
+.col-md-4:nth-child(2n) .card.h-100 {
+  background-color: #ffe6e6; /* light pink */
+}
+
+.col-md-4:nth-child(2n+1) .card.h-100 {
+  background-color: #fff3cd; /* light yellow */
+}
+
+/* Base button style */
+.btn-custom {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 8px 16px;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.btn-custom:hover {
+  background-color: #c3e6cb;
+  color: #0b2e13;
+  text-decoration: none;
+}
+
+.form-container {
+  max-width: 60%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fefefe;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  width: 20%;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form-group small {
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.form-actions .btn-custom {
+  margin: 0 0.5rem;
+}
+
